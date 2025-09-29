@@ -27,23 +27,21 @@
       color: white;
       text-align: center;
       padding: 100px 20px;
-      position: relative;
-      overflow: hidden;
     }
     header h1 {
-      font-size: 3.5rem;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
       margin-bottom: 15px;
       animation: fadeInDown 1s ease-out;
     }
     header p {
-      font-size: 1.4rem;
+      font-size: clamp(1rem, 2.5vw, 1.4rem);
       max-width: 800px;
       margin: 0 auto;
       animation: fadeInUp 1s ease-out;
     }
     nav {
       background: rgba(15, 23, 42, 0.9);
-      padding: 15px 0;
+      padding: 15px 10px;
       text-align: center;
       position: sticky;
       top: 0;
@@ -52,124 +50,117 @@
     }
     nav a {
       color: var(--text);
-      margin: 0 20px;
+      margin: 0 12px;
       font-weight: 600;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      display: inline-block;
+      padding: 8px 4px;
       transition: color 0.3s;
     }
-    nav a:hover {
-      color: var(--accent);
-    }
+    nav a:hover { color: var(--accent); }
     section {
       max-width: 1100px;
-      margin: 80px auto;
+      margin: 60px auto;
       padding: 0 20px;
       opacity: 0;
       transform: translateY(40px);
       transition: all 1s ease;
     }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    section.visible { opacity: 1; transform: translateY(0); }
     section h2 {
-      font-size: 2.5rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
       margin-bottom: 30px;
       color: var(--accent);
       text-align: center;
-      position: relative;
     }
     .skills-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 15px;
+      gap: 12px;
       justify-content: center;
     }
     .skills-list span {
       background: var(--primary);
       color: white;
-      padding: 10px 18px;
+      padding: 10px 16px;
       border-radius: 25px;
       font-weight: 600;
+      font-size: 0.95rem;
       transition: transform 0.3s, background 0.3s;
     }
-    .skills-list span:hover {
-      transform: scale(1.05);
-      background: var(--accent);
-    }
+    .skills-list span:hover { transform: scale(1.05); background: var(--accent); }
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
     }
     .card {
       background: #1e293b;
       border-radius: 12px;
-      padding: 30px;
+      padding: 25px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.4);
       transition: transform 0.4s, box-shadow 0.4s;
     }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
-    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 8px 30px rgba(0,0,0,0.5); }
     .card h3 {
       color: var(--accent);
-      margin-bottom: 15px;
-      font-size: 1.5rem;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
     }
     .timeline {
-      border-left: 4px solid var(--accent);
-      padding-left: 25px;
-      margin-top: 20px;
+      position: relative;
+      margin-left: 20px;
+      padding-left: 20px;
+    }
+    .timeline:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--accent);
     }
     .timeline-item {
-      margin-bottom: 30px;
       position: relative;
+      margin-bottom: 30px;
+      padding-left: 20px;
     }
     .timeline-item:before {
       content: '';
       position: absolute;
-      left: -14px;
-      top: 8px;
-      width: 20px;
-      height: 20px;
+      left: -12px;
+      top: 10px;
+      width: 16px;
+      height: 16px;
       background: var(--accent);
       border-radius: 50%;
+      border: 3px solid var(--secondary);
+      box-sizing: content-box;
     }
     .timeline-item h4 {
       color: var(--primary);
       margin-bottom: 8px;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
     }
     .contact {
       background: #1e293b;
       text-align: center;
-      padding: 50px;
+      padding: 40px 20px;
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0,0,0,0.4);
     }
-    .contact p {
-      font-size: 1.2rem;
-    }
+    .contact p { font-size: 1.1rem; word-wrap: break-word; }
     footer {
       background: #0f172a;
       color: #94a3b8;
       text-align: center;
-      padding: 30px 20px;
-      margin-top: 60px;
+      padding: 20px 10px;
+      margin-top: 50px;
+      font-size: 0.9rem;
     }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2.5rem; }
-      section h2 { font-size: 2rem; }
-    }
+    @keyframes fadeInDown { from { opacity: 0; transform: translateY(-40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -252,15 +243,13 @@
 
   <script>
     const sections = document.querySelectorAll('section');
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        if(top < triggerBottom) {
-          section.classList.add('visible');
-        }
+    function revealOnScroll() {
+      const trigger = window.innerHeight * 0.85;
+      sections.forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < trigger) sec.classList.add('visible');
       });
-    };
+    }
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
   </script>
