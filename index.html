@@ -7,14 +7,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --primary: #6366f1; /* Indigo */
-      --secondary: #0f172a; /* Dark Navy */
-      --accent: #14b8a6; /* Teal */
-      --light: #f1f5f9; /* Light Gray */
+      --primary: #6366f1;
+      --secondary: #0f172a;
+      --accent: #14b8a6;
+      --light: #f1f5f9;
       --text: #e2e8f0;
+      --nav-height: 70px;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: var(--nav-height);
+    }
     body {
       font-family: 'Inter', sans-serif;
       background: var(--secondary);
@@ -61,7 +65,7 @@
     section {
       max-width: 1100px;
       margin: 60px auto;
-      padding: 0 20px;
+      padding: 20px 20px 0;
       opacity: 0;
       transform: translateY(40px);
       transition: all 1s ease;
@@ -130,7 +134,7 @@
       content: '';
       position: absolute;
       left: -12px;
-      top: 10px;
+      top: 12px;
       width: 16px;
       height: 16px;
       background: var(--accent);
@@ -242,6 +246,7 @@
   </footer>
 
   <script>
+    // Reveal on scroll
     const sections = document.querySelectorAll('section');
     function revealOnScroll() {
       const trigger = window.innerHeight * 0.85;
@@ -252,6 +257,17 @@
     }
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll();
+
+    // Custom smooth scroll to offset sticky nav
+    document.querySelectorAll('nav a').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        const offset = document.querySelector('nav').offsetHeight;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      });
+    });
   </script>
 </body>
 </html>
