@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arpit Khandelwal | Blockchain Developer</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --secondary: #1e293b;
+      --light: #f8fafc;
+      --dark: #0f172a;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: var(--light); color: var(--secondary); line-height: 1.6; }
+    a { color: var(--primary); text-decoration: none; }
+    header { background: linear-gradient(to right, var(--dark), var(--secondary)); color: white; text-align: center; padding: 80px 20px; }
+    header h1 { font-size: 3rem; margin-bottom: 10px; }
+    header p { font-size: 1.3rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
+    nav { background: var(--secondary); padding: 15px 0; text-align: center; position: sticky; top: 0; z-index: 10; }
+    nav a { color: white; margin: 0 20px; font-weight: 500; }
+    nav a:hover { color: var(--primary); }
+    section { max-width: 1000px; margin: 60px auto; padding: 0 20px; }
+    section h2 { font-size: 2rem; margin-bottom: 25px; color: var(--dark); border-left: 5px solid var(--primary); padding-left: 15px; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 12px; }
+    .skills-list span { background: var(--primary); color: white; padding: 10px 18px; border-radius: 30px; font-size: 0.95rem; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+    .card { background: white; border-radius: 12px; padding: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); transition: transform 0.2s ease; }
+    .card:hover { transform: translateY(-6px); }
+    .card h3 { color: var(--primary); margin-bottom: 12px; }
+    .timeline { border-left: 4px solid var(--primary); padding-left: 25px; }
+    .timeline-item { margin-bottom: 25px; }
+    .timeline-item h4 { color: var(--dark); font-weight: bold; margin-bottom: 6px; }
+    footer { background: var(--dark); color: white; text-align: center; padding: 25px 15px; margin-top: 60px; }
+    .contact { text-align: center; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .contact p { font-size: 1.1rem; }
+    @media (max-width: 600px) {
+      header h1 { font-size: 2.2rem; }
+      section h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Arpit Khandelwal</h1>
+    <p>Protocol-focused Blockchain Developer with expertise in Rust, Solidity, and decentralized systems.</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a protocol-focused blockchain developer with deep expertise in Rust and smart contract development across both EVM (Solidity) and Solana. I specialize in building secure, high-performance decentralized systems and designing custom consensus layers (PoS, DAGs, BFT). My current focus is on application-layer development, contract architecture, and cross-chain integration, delivering robust, gas-optimized smart contracts and scalable decentralized solutions.</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-list">
+      <span>Rust</span><span>Solidity</span><span>zk-Proof</span><span>zk-SNARKs</span><span>Rust(Actix)</span>
+      <span>Bitcoin Core</span><span>Miniscript</span><span>Electrum</span><span>Ink!</span><span>Anchor</span>
+      <span>Node.js</span><span>Postgres</span><span>MongoDB</span><span>Docker</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Highlighted Projects</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Decentralised Prediction Marketplace</h3>
+        <p>Designed and implemented a decentralized Prediction Marketplace DApp on Aleph Zero using Solidity. Enabled transparent outcome-based betting with secure resolution logic, dispute handling, and reward distribution.</p>
+      </div>
+      <div class="card">
+        <h3>Arqos - Bitcoin Liquid Staking Protocol</h3>
+        <p>Built a secure and scalable Bitcoin liquid staking platform leveraging the Babylon Protocol. Integrated real-time reward distribution powered by Rust backend services and Lightning Network to enhance transaction speed and liquidity.</p>
+      </div>
+      <div class="card">
+        <h3>Bitcoin-Settlement-Core</h3>
+        <p>Developed a secure UTXO settlement engine for exchanges using descriptor wallets and PSBT. Implemented multi-signature scripts, real-time mempool monitoring, and automated fee management for reliable, scalable transaction processing.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>Blockchain Protocol Engineer</h4>
+        <p>Over 4 years of experience in blockchain infrastructure and protocol engineering with a strong focus on Rust-based development, Bitcoin Core internals, and low-level blockchain systems. Worked with Solana, Polygon, Polkadot, Cosmos, and Ethereum ecosystems.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <h2>Education</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <h4>B.Tech (Hons.), NIT Kurukshetra</h4>
+        <p>Specialized in computer science and distributed systems with a focus on cryptography and blockchain technologies.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <div class="contact">
+      <p>Email: <a href="mailto:arpit@example.com">arpit@example.com</a></p>
+      <p>Currently open to collaboration, freelance projects, and full-time opportunities in blockchain development.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Arpit Khandelwal. All rights reserved.
+  </footer>
+</body>
+</html>
